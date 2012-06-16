@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120616143427) do
 
   create_table "clientes", :force => true do |t|
-    t.string   "nome"
+    t.string   "nome", :null => false
     t.string   "cpfcnpj"
     t.string   "fone"
     t.string   "email"
