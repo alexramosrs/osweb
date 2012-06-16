@@ -1,0 +1,69 @@
+<%= form_for(@servico) do |f| %>
+  <% if @servico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@servico.errors.count, "error") %> prohibited this servico from being saved:</h2>
+
+      <ul>
+      <% @servico.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id_cliente %><br />
+    <%= f.text_field :id_cliente %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.text_field :data %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br />
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :contato %><br />
+    <%= f.text_field :contato %>
+  </div>
+  <div class="field">
+    <%= f.label :descr %><br />
+    <%= f.text_area :descr %>
+  </div>
+  <div class="field">
+    <%= f.label :laudo %><br />
+    <%= f.text_area :laudo %>
+  </div>
+  <div class="field">
+    <%= f.label :solucao %><br />
+    <%= f.text_area :solucao %>
+  </div>
+  <div class="field">
+    <%= f.label :situacao %><br />
+    <%= f.text_field :situacao %>
+  </div>
+  <div class="field">
+    <%= f.label :numHoras %><br />
+    <%= f.text_field :numHoras %>
+  </div>
+  <div class="field">
+    <%= f.label :valorHora %><br />
+    <%= f.text_field :valorHora %>
+  </div>
+  <div class="field">
+    <%= f.label :valorTotal %><br />
+    <%= f.text_field :valorTotal %>
+  </div>
+  <div class="field">
+    <%= f.label :tecnico %><br />
+    <%= f.text_field :tecnico %>
+  </div>
+  <div class="field">
+    <%= f.label :obs %><br />
+    <%= f.text_area :obs %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

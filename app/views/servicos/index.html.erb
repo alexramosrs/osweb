@@ -1,0 +1,47 @@
+<h1>Listing servicos</h1>
+
+<table>
+  <tr>
+    <th>Id cliente</th>
+    <th>Data</th>
+    <th>Tipo</th>
+    <th>Contato</th>
+    <th>Descr</th>
+    <th>Laudo</th>
+    <th>Solucao</th>
+    <th>Situacao</th>
+    <th>Numhoras</th>
+    <th>Valorhora</th>
+    <th>Valortotal</th>
+    <th>Tecnico</th>
+    <th>Obs</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @servicos.each do |servico| %>
+  <tr>
+    <td><%= servico.id_cliente %></td>
+    <td><%= servico.data %></td>
+    <td><%= servico.tipo %></td>
+    <td><%= servico.contato %></td>
+    <td><%= servico.descr %></td>
+    <td><%= servico.laudo %></td>
+    <td><%= servico.solucao %></td>
+    <td><%= servico.situacao %></td>
+    <td><%= servico.numHoras %></td>
+    <td><%= servico.valorHora %></td>
+    <td><%= servico.valorTotal %></td>
+    <td><%= servico.tecnico %></td>
+    <td><%= servico.obs %></td>
+    <td><%= link_to 'Show', servico %></td>
+    <td><%= link_to 'Edit', edit_servico_path(servico) %></td>
+    <td><%= link_to 'Destroy', servico, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Servico', new_servico_path %>
