@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Id cliente:</b>
-  <%= @servico.id_cliente %>
+  <b>Cliente:</b>
+  <%= @servico.cliente_id %> - <%= @servico.cliente.nome %>
 </p>
 
 <p>
@@ -21,7 +21,7 @@
 </p>
 
 <p>
-  <b>Descr:</b>
+  <b>Descrição:</b>
   <%= @servico.descr %>
 </p>
 
@@ -31,40 +31,40 @@
 </p>
 
 <p>
-  <b>Solucao:</b>
+  <b>Solução:</b>
   <%= @servico.solucao %>
 </p>
 
 <p>
-  <b>Situacao:</b>
+  <b>Situação:</b>
   <%= @servico.situacao %>
 </p>
 
 <p>
-  <b>Numhoras:</b>
+  <b>Número de horas:</b>
   <%= @servico.numHoras %>
 </p>
 
 <p>
-  <b>Valorhora:</b>
+  <b>Valor hora:</b>
   <%= @servico.valorHora %>
 </p>
 
 <p>
-  <b>Valortotal:</b>
+  <b>Valor total:</b>
   <%= @servico.valorTotal %>
 </p>
 
 <p>
-  <b>Tecnico:</b>
+  <b>Técnico:</b>
   <%= @servico.tecnico %>
 </p>
 
 <p>
-  <b>Obs:</b>
+  <b>Observações:</b>
   <%= @servico.obs %>
 </p>
 
 
-<%= link_to 'Edit', edit_servico_path(@servico) %> |
-<%= link_to 'Back', servicos_path %>
+<%= link_to 'Editar', edit_servico_path(@servico) %> |
+<%= link_to 'Voltar', servicos_path %>

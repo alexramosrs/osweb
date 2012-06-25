@@ -1,9 +1,9 @@
 Osweb::Application.routes.draw do
+  resources :usuarios
+
   resources :clientes
 
   resources :servicos
-
-  resources :posts
 
   get "home/index"
 

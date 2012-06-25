@@ -1,20 +1,20 @@
-<h1>Listing servicos</h1>
+<h1>Listagem de serviços</h1>
 
 <table>
   <tr>
-    <th>Id cliente</th>
+    <th>Cliente</th>
     <th>Data</th>
     <th>Tipo</th>
     <th>Contato</th>
-    <th>Descr</th>
+    <th>Descrição</th>
     <th>Laudo</th>
-    <th>Solucao</th>
-    <th>Situacao</th>
-    <th>Numhoras</th>
-    <th>Valorhora</th>
-    <th>Valortotal</th>
-    <th>Tecnico</th>
-    <th>Obs</th>
+    <th>Solução</th>
+    <th>Situação</th>
+    <th>Num. horas</th>
+    <th>Valor hora</th>
+    <th>Valor total</th>
+    <th>Técnico</th>
+    <th>Observações</th>
     <th></th>
     <th></th>
     <th></th>
@@ -22,7 +22,7 @@
 
 <% @servicos.each do |servico| %>
   <tr>
-    <td><%= servico.id_cliente %></td>
+    <td><%= servico.cliente.nome %></td>
     <td><%= servico.data %></td>
     <td><%= servico.tipo %></td>
     <td><%= servico.contato %></td>
@@ -35,13 +35,17 @@
     <td><%= servico.valorTotal %></td>
     <td><%= servico.tecnico %></td>
     <td><%= servico.obs %></td>
-    <td><%= link_to 'Show', servico %></td>
-    <td><%= link_to 'Edit', edit_servico_path(servico) %></td>
-    <td><%= link_to 'Destroy', servico, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Exibir', servico %></td>
+    <td><%= link_to 'Editar', edit_servico_path(servico) %></td>
+    <td><%= link_to 'Excluir', servico, confirm: 'Confirma exclusão?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Servico', new_servico_path %>
+<%= link_to 'Novo Serviço', new_servico_path %>
+<%= link_to 'Voltar', root_path %>
+
+
+

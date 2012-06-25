@@ -1,16 +1,16 @@
-<h1>Listing clientes</h1>
+<h1>Listagem de clientes</h1>
 
 <table>
   <tr>
     <th>Nome</th>
-    <th>Cpfcnpj</th>
+    <th>CPF/CNPJ</th>
     <th>Fone</th>
-    <th>Email</th>
-    <th>Endereco</th>
+    <th>E-mail</th>
+    <th>Endereço</th>
     <th>Cidade</th>
-    <th>Uf</th>
-    <th>Cep</th>
-    <th>Obs</th>
+    <th>UF</th>
+    <th>CEP</th>
+    <th>Observações</th>
     <th></th>
     <th></th>
     <th></th>
@@ -27,13 +27,15 @@
     <td><%= cliente.uf %></td>
     <td><%= cliente.cep %></td>
     <td><%= cliente.obs %></td>
-    <td><%= link_to 'Show', cliente %></td>
-    <td><%= link_to 'Edit', edit_cliente_path(cliente) %></td>
-    <td><%= link_to 'Destroy', cliente, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Exibir', cliente %></td>
+    <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+    <td><%= link_to 'Excluir', cliente, confirm: 'Confirma exclusão?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Cliente', new_cliente_path %>
+<%= link_to 'Novo Cliente', new_cliente_path %>
+<%= link_to 'Voltar', root_path %>
+
