@@ -3,7 +3,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios
   # GET /usuarios.json
 
-  before_filter :require_login   
+  #before_filter :require_login   
 
   def index
     @usuarios = Usuario.all
