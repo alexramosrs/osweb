@@ -1,27 +1,66 @@
-#encoding: utf-8
-<h1>Listagem de usuários</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>.:: Infotech ::.</title>
+  <link rel="stylesheet" href="css/geral.css" type="text.css" />
 
-<table>
-  <tr>
-    <th>Login</th>
-    <th>Nome</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @usuarios.each do |usuario| %>
-  <tr>
-    <td><%= usuario.login %></td>
-    <td><%= usuario.nome %></td>
-    <td><%= link_to 'Exibir', usuario %></td>
-    <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
-    <td><%= link_to 'Excluir', usuario, confirm: 'Confirma exclusão?', method: :delete %></td>
-  </tr>
-<% end %>
+</head><body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0">
+<table class="fundo" align="center" border="0" cellpadding="0" cellspacing="0" rules="none" width="775">
+  <tbody>
+    <tr>
+      <td colspan="4" height="45" valign="middle">
+      <div class="menu" align="right"><strong><font size="-1"><%= link_to 'Home', root_path %> | <%= link_to "Serviços", servicos_path %>
+| <%= link_to 'Clientes', clientes_path %> | <%= link_to 'Usuários', usuarios_path %> | <%= link_to 'Notícias', posts_path %> | <%= link_to 'Login ' + (session[:username] == nil ? '' : session[:username]), login_url %>  | <%= link_to 'Logout ', logout_path %></strong></font></div>
+      </td>		
+    </tr>
+    <tr><td colspan="3" height="100" ></td></tr>
+    <tr>
+      <td height="430" valign="top" class="textos" align="left"><h3>Usuários</h3></br>
+		<table align="center" border="0" cellpadding="0" cellspacing="0" rules="none">
+			<tbody>
+				<tr class="dados">
+					<td width="50" align="center">Código</td>						
+					<td width="120" align="center">Login</td>	
+					<td width="120" align="center">Nome</td>
+					<td width="120" align="center">E-mail</td>
+					<td width="90" >
+						<%= link_to(image_tag("/images/adicionar.png", :alt => "Incluir Usuário", :title => "Incluir", :width => "24", :height => "24"), new_usuario_path) %>
+					</td>					
+				</tr>
+				<tr>
+					<td colspan="5" align="top"><hr size="1" color="#000000"></td>				
+				</tr>
+				<% @usuarios.each do |usuario| %>				
+				<tr>
+					<td align="center"><%= usuario.id %></td>										
+					<td align="center"><%= usuario.login %></td>					
+					<td align="center"><%= usuario.nome %></td>
+					<td align="center"><%= usuario.email %></td>
+					<td>
+						<%= link_to(image_tag("/images/exibir.png", :alt => "Exibir Usuário", :title => "Exibir", :width => "24", :height => "24"), usuario) %>
+						<%= link_to(image_tag("/images/editar.png", :alt => "Editar Usuário", :title => "Editar", :width => "24", :height => "24"), edit_usuario_path(usuario)) %>						
+						<%= link_to(image_tag("/images/excluir.png", :alt => "Excluir Usuário", :title => "Excluir", :width => "24", :height => "24"), usuario, confirm: 'Confirma exclusão?', method: :delete) %>												
+					</td>					
+				</tr>	  
+				<% end %>				
+			</tbody>
+		</table>	  
+	  </td>	
+    </tr>
+    <tr>
+      <td><font style="font-weight:bold;"><%= link_to 'Voltar', root_path %></font></td>		
+    </tr>
+    <tr>
+      <td colspan="10" class="rodape" align="center" height="54" valign="middle">
+      <div align="center"> <strong><a href="index.html">INFOTECH</a> - </strong>Ordem de Serviço
+		<br/>Copyright © 2012 | Leandro | Alexsandro
+      </div>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'Novo Usuário', new_usuario_path %>
-<%= link_to 'Voltar', root_path %>
+</body></html>

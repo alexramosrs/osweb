@@ -2,6 +2,9 @@
 class UsuariosController < ApplicationController
   # GET /usuarios
   # GET /usuarios.json
+
+  before_filter :require_login   
+
   def index
     @usuarios = Usuario.all
 
@@ -45,7 +48,7 @@ class UsuariosController < ApplicationController
 
     respond_to do |format|
       if @usuario.save
-        format.html { redirect_to @usuario, notice: 'Usuário criado com sucesso.' }
+        format.html { redirect_to @usuario }
         format.json { render json: @usuario, status: :created, location: @usuario }
       else
         format.html { render action: "new" }
@@ -61,7 +64,7 @@ class UsuariosController < ApplicationController
 
     respond_to do |format|
       if @usuario.update_attributes(params[:usuario])
-        format.html { redirect_to @usuario, notice: 'Usuário atualizado com sucesso.' }
+        format.html { redirect_to @usuario}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -75,6 +78,8 @@ class UsuariosController < ApplicationController
   def destroy
     @usuario = Usuario.find(params[:id])
     @usuario.destroy
+
+    session.destroy
 
     respond_to do |format|
       format.html { redirect_to usuarios_url }

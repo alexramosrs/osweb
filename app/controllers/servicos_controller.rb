@@ -2,6 +2,9 @@
 class ServicosController < ApplicationController
   # GET /servicos
   # GET /servicos.json
+
+  before_filter :require_login  
+  
   def index
     @servicos = Servico.all
 

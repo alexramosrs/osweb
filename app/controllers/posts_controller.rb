@@ -2,6 +2,9 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
+  
+  skip_before_filter :require_login, :only => [:show, :index]
+  
   def index
     @posts = Post.all
 

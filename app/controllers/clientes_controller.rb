@@ -2,6 +2,9 @@
 class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
+  
+  before_filter :require_login   
+  
   def index
     @clientes = Cliente.all
 

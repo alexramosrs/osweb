@@ -1,4 +1,72 @@
-<h1>Ordem de Serviço WEB</h1>
-<%= link_to "Clientes", clientes_path %>
-<%= link_to "Serviços", servicos_path %>
-<%= link_to "Usuários", usuarios_path %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>.:: Infotech ::.</title>
+  <link rel="stylesheet" href="css/geral.css" type="text.css" />
+
+</head><body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0">
+<table class="fundo" align="center" border="0" cellpadding="0" cellspacing="0" rules="none" width="775">
+
+<!--DWLayoutTable--> <tbody>
+    <tr>
+      <td colspan="10" height="45" valign="middle">
+      <div class="menu" align="right"><strong><font size="-1"><%= link_to 'Home', root_path %> | <%= link_to "Serviços", servicos_path %>
+| <%= link_to 'Clientes', clientes_path %> | <%= link_to 'Usuários', usuarios_path %> | <%= link_to 'Notícias', posts_path %> | <%= link_to 'Login ' + (session[:username] == nil ? '' : session[:username]), login_url %>  | <%= link_to 'Logout ', logout_path %></strong></font></div>
+      </td>				  
+    </tr>
+    <tr>
+      <td colspan="8" height="118" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td colspan="4" class="textos" align="center" valign="baseline">
+      <div align="left"><br />
+	    <h3>Sobre a empresa</h3>
+		<p align="justify">Em 1993 a Infotech iniciou sua trajetória desenvolvendo soluções tecnológicas inovadoras para o segmento corporativo.<br/>
+		<br/>Hoje esta posição se encontra consolidada e cada vez mais presente em clientes de todo o Brasil.</p>
+        <br/>
+	    <h3>Clientes</h3>	  
+	    <img src="images/clientes.jpg" alt="Clientes"/></td>
+      </td>
+      <td rowspan="5" valign="top" width="20"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td class="textos" valign="top" width="170"><img src="images/computador.jpg" alt="Computador"/>
+  	    <h3>Soluções em Software ERP/BI/CRM</h3>
+		<p align="justify">Torna a empresa mais competitiva, com maior velocidade de decisão, oferecendo soluções que organizam, disciplinam, definem e impõem processos, armazenam dados, geram informação e auxiliam a gestão.<br/></p>	  						
+   	    <h3>Serviços: Consultoria em TI</h3>
+		<p align="justify">A Infotech assessora seus clientes no planejamento e implementação das melhores soluções tecnológicas em software e equipamentos.<br/></p>	  						
+	  
+	  </td>
+      <td valign="top" width="40"><!--DWLayoutEmptyCell-->&nbsp;</td>	  
+      <td width="200" class="textos" valign="top">
+		<div align="left"><br />
+		<h3>Notí­cias</h3>
+
+		<% @posts.each do |post| %>				
+			<p class="noticia"><%= post.data %> - <%= post.title %></p>  		
+			<p align="justify"><%= post.content %><br/></p>
+		<% end %>	
+		
+	  </td>
+    </tr>
+    <tr>
+      <td colspan="3" height="30" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="4" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>
+      <td colspan="3" valign="top"><!--DWLayoutEmptyCell-->&nbsp;</td>	  
+    </tr>
+    <tr>
+      <td colspan="10" class="rodape" align="center" height="54" valign="middle">
+      <div align="center"> <strong><a href="index.html">INFOTECH</a> - </strong>Ordem de Serviço
+		<br/>Copyright © 2012 | Leandro | Alexsandro
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td height="1"><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>

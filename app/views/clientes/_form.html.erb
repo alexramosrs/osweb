@@ -1,53 +1,118 @@
-<%= form_for(@cliente) do |f| %>
-  <% if @cliente.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>.:: Infotech ::.</title>
+  <link rel="stylesheet" href="../../css/geral.css" type="text.css" />
 
-      <ul>
-      <% @cliente.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+</head><body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0">
+<table class="fundo" align="center" border="0" cellpadding="0" cellspacing="0" rules="none" width="775">
+  <tbody>
+    <tr>
+      <td colspan="4" height="45" valign="middle">
+      <div class="menu" align="right"><strong><font size="-1"><%= link_to 'Home', root_path %> | <%= link_to "Serviços", servicos_path %>
+| <%= link_to 'Clientes', clientes_path %> | <%= link_to 'Usuários', usuarios_path %> | <%= link_to 'Notícias', posts_path %> | <%= link_to 'Login ' + (session[:username] == nil ? '' : session[:username]), login_url %>  | <%= link_to 'Logout ', logout_path %></strong></font></div>
+      </td>		
+    </tr>
+    <tr><td colspan="3" height="100" ></td></tr>
+    <tr>
+      <td height="430" valign="top" class="textos" align="left"><h3>Cliente</h3></br>
+		<table cellpadding="2" align="left" border="0" cellpadding="0" cellspacing="0" rules="none">
+			<tbody>
+				<%= form_for(@cliente) do |f| %>
+					<% if @cliente.errors.any? %>
+						<div id="error_explanation">
+							<h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
 
-  <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </div>
-  <div class="field">
-    <%= "CPF / CNPJ" %><br />
-    <%= f.text_field :cpfcnpj %>
-  </div>
-  <div class="field">
-    <%= f.label "Telefone" %><br />
-    <%= f.text_field :fone %>
-  </div>
-  <div class="field">
-    <%= "E-mail" %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label "Endereço" %><br />
-    <%= f.text_field :endereco %>
-  </div>
-  <div class="field">
-    <%= f.label :cidade %><br />
-    <%= f.text_field :cidade %>
-  </div>
-  <div class="field">
-    <%= "UF" %><br />
-    <%= f.text_field :uf %>
-  </div>
-  <div class="field">
-    <%= "CEP" %><br />
-    <%= f.text_field :cep %>
-  </div>
-  <div class="field">
-    <%= f.label "Observações" %><br />
-    <%= f.text_area :obs %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+							<ul>
+								<% @cliente.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+								<% end %>
+							</ul>
+						</div>
+					<% end %>
+				<tr class="dados">
+					<td width="210" align="right">Código:</td>
+					<td width="10"></td>					
+					<td align="left"><%= @cliente.id %> </td>
+                    <td width=90>
+                        <%= link_to(image_tag("/images/adicionar.png", :alt => "Incluir Cliente", :title => "Incluir", :width => "24", :height => "24"), new_cliente_path) %>
+						<%= link_to(image_tag("/images/exibir.png", :alt => "Exibir Cliente", :title => "Exibir", :width => "24", :height => "24"), @cliente) %>						
+						<%= link_to(image_tag("/images/excluir.png", :alt => "Excluir Cliente", :title => "Excluir", :width => "24", :height => "24"), @cliente, confirm: 'Confirma exclusão?', method: :delete) %>																							
+					</td>					
+				</tr>					
+				<tr class="dados">
+					<td width="210" align="right">Nome:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_field :nome %></td>
+				</tr>								
+				<tr class="dados">
+					<td align="right">CPF/CNPJ:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_field :cpfcnpj %></td>
+				</tr>				
+				<tr class="dados">
+					<td align="right">Telefone:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_field :fone %></td>
+				</tr>				
+				<tr class="dados">
+					<td align="right">E-mail:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_field :email %> </td>
+				</tr>				
+				<tr class="dados">
+					<td align="right">Endereço:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_field :endereco %></td>
+				</tr>								
+				<tr class="dados">
+					<td align="right">Cidade:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_field :cidade %></td>
+				</tr>								
+				<tr class="dados">
+					<td align="right">UF:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_field :uf %></td>
+				</tr>								
+				<tr class="dados">
+					<td align="right">CEP:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_field :cep %></td>
+				</tr>												
+				<tr class="dados"> 
+					<td align="right">Observações:</td>
+					<td width="10"></td>					
+					<td align="left"><%= f.text_area :obs, :rows => "5" %></td>
+				</tr>		
+				<tr>
+					<td align="right"></td>
+					<td width="10"></td>										
+					<td align="left" class="actions"><%= f.submit "Atualiza Cliente" %></td>
+			    </tr>			
+				<% end %>
+			</tbody>
+		</table>	  
+	  </td>	
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td><font style="font-weight:bold;"><%= link_to 'Voltar', clientes_path %></font></td>				
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td colspan="10" class="rodape" align="center" height="54" valign="middle">
+      <div align="center"> <strong><a href="index.html">INFOTECH</a> - </strong>Ordem de Serviço
+		<br/>Copyright © 2012 | Leandro | Alexsandro
+      </div>
+      </td>
+    </tr>
+    <tr>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>

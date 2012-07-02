@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>.:: Infotech ::.</title>
+  <link rel="stylesheet" href="css/geral.css" type="text.css" />
+
+</head><body bottommargin="0" topmargin="0" leftmargin="0" rightmargin="0">
+<table class="fundo" align="center" border="0" cellpadding="0" cellspacing="0" rules="none" width="775">
+
+<!--DWLayoutTable--> <tbody>
+    <tr>
+      <td colspan="10" height="45" valign="middle">
+      <div class="menu" align="right"><strong><font size="-1"><%= link_to 'Home', root_path %> | <%= link_to "Serviços", servicos_path %>
+| <%= link_to 'Clientes', clientes_path %> | <%= link_to 'Usuários', usuarios_path %> | <%= link_to 'Notícias', posts_path %> | <%= link_to 'Login ' + (session[:username] == nil ? '' : session[:username]), login_url %>  | <%= link_to 'Logout ', logout_path %></strong></font></div>
+	  </td>
+    </tr>
+      <td rowspan="5" height="118" valign="top" ><!--DWLayoutEmptyCell-->&nbsp;</td>    
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td width=300 height="400" valign="center" class="textos" align="right">Usuário:</br></br>Senha:</td>
+      <td height="400" valign="center" class="textos" align="left" >
+  	    <h3>Login</h3>
+			<%= form_tag sessions_path do %>
+				<div class="field">
+				<%= text_field_tag :username, params[:username] %>
+				</div>
+				<div class="field">
+				<%= password_field_tag :password %>
+				</div>
+				<div class="actions"><%= submit_tag "Login" %></div>
+			<% end %>
+	  </td>		
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+    </tr>
+    <tr>
+      <td colspan="10" class="rodape" align="center" height="54" valign="middle">
+      <div align="center"> <strong><a href="index.html">INFOTECH</a> - </strong>Ordem de Serviço
+		<br/>Copyright © 2012 | Leandro | Alexsandro
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td height="1"><br />
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body></html>
