@@ -41,7 +41,7 @@
       <td valign="top" width="40"><!--DWLayoutEmptyCell-->&nbsp;</td>	  
       <td width="200" class="textos" valign="top">
 		<div align="left"><br />
-		<h3>Notí­cias</h3>
+		<h3><%= link_to 'Notícias', posts_path %></h3>
 
 		<% @posts.each do |post| %>				
 			<p class="noticia"><%= post.data %> - <%= post.title %></p>  		
