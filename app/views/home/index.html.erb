@@ -36,18 +36,15 @@
 		<p align="justify">Torna a empresa mais competitiva, com maior velocidade de decisão, oferecendo soluções que organizam, disciplinam, definem e impõem processos, armazenam dados, geram informação e auxiliam a gestão.<br/></p>	  						
    	    <h3>Serviços: Consultoria em TI</h3>
 		<p align="justify">A Infotech assessora seus clientes no planejamento e implementação das melhores soluções tecnológicas em software e equipamentos.<br/></p>	  						
-	  
 	  </td>
       <td valign="top" width="40"><!--DWLayoutEmptyCell-->&nbsp;</td>	  
       <td width="200" class="textos" valign="top">
 		<div align="left"><br />
-		<h3><%= link_to 'Notícias', posts_path %></h3>
-
+		<h3><%= link_to 'Notícias', posts_path, :class => 'noticiatitulo' %></h3>
 		<% @posts.each do |post| %>				
-			<p class="noticia"><%= post.data %> - <%= post.title %></p>  		
+			<p><%= link_to "#{post.data} - #{post.title}", post, :class => 'noticia' %></p>  					
 			<p align="justify"><%= post.content %><br/></p>
 		<% end %>	
-		
 	  </td>
     </tr>
     <tr>

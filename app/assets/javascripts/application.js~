@@ -14,5 +14,8 @@
 //= require jquery_ujs
 //= require_tree .
 
+function upCaseLogin = function(login){
+  return login.substring(0,1).toUpperCase() + login.substring(1);
+}	
 
 
